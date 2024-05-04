@@ -3,3 +3,6 @@ spring:
     name: webfluxSecurity
   webflux:
     base-path: /api/v1
+
+server:
+  port: 8080
