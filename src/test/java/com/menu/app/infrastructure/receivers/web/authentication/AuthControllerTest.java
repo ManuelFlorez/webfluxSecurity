@@ -43,10 +43,9 @@ class AuthControllerTest {
 
     @BeforeEach
     void init() {
-        registerUserDto = RegisterUserDto.builder()
-                .userName("Manuel")
-                .password("pass123")
-                .build();
+        registerUserDto = new RegisterUserDto();
+        registerUserDto.setUserName("Manuel");
+        registerUserDto.setPassword("pass123");
     }
 
     @Test
