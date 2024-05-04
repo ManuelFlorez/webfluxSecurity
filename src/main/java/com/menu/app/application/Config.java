@@ -25,9 +25,4 @@ public class Config {
         return new RegisterController();
     }
 
-    @Bean
-    public AuthController getAuthController() {
-        return new AuthController(getLoginController(), getRegisterController());
-    }
-
 }
