@@ -21,4 +21,12 @@ public class RegisterUserDto {
                 .password(password)
                 .build();
     }
+
+    public static RegisterUserDto toMe(User user) {
+        return RegisterUserDto.builder()
+                .userName(user.getUserName())
+                .password(user.getPassword())
+                .build();
+    }
+
 }
