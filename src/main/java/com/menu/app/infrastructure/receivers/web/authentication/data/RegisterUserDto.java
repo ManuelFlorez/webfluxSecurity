@@ -2,11 +2,9 @@ package com.menu.app.infrastructure.receivers.web.authentication.data;
 
 import com.menu.app.domain.entities.User;
 import jakarta.validation.constraints.NotEmpty;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 public class RegisterUserDto {
 
     @NotEmpty(message = "The userName is required.")
@@ -23,10 +21,10 @@ public class RegisterUserDto {
     }
 
     public static RegisterUserDto toMe(User user) {
-        return RegisterUserDto.builder()
-                .userName(user.getUserName())
-                .password(user.getPassword())
-                .build();
+        RegisterUserDto registerUserDto = new RegisterUserDto();
+        registerUserDto.setUserName(user.getUserName());
+        registerUserDto.setPassword(user.getPassword());
+        return registerUserDto;
     }
 
 }
